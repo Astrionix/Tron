@@ -1,6 +1,7 @@
-from openrouter_client import DEFAULT_MODEL, chat_completion
+from openrouter_client import DEFAULT_MODEL, chat_completion, ensure_api_key
 
 def handler(request):
+    ensure_api_key()
     if request.method != "POST":
         return {
             "statusCode": 200,
